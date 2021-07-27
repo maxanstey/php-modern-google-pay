@@ -41,8 +41,8 @@ use PassGeneration\DataTypes\Barcodes\Barcode;
  */
 class ResourceDefinitions
 {
-    /** Define an Offer Class
-     *
+    /**
+     * Define an Offer Class
      * See https://developers.google.com/pay/passes/reference/v1/offerclass
      *
      * @param string $classId The unique identifier for a class
@@ -76,8 +76,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Offer Object
-     *
+    /**
+     * Define an Offer Object
      * See https://developers.google.com/pay/passes/reference/v1/offerobject
      *
      * @param string $classId The unique identifier for a class
@@ -112,8 +112,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an EventTicket Class
-     *
+    /**
+     * Define an EventTicket Class
      * See https://developers.google.com/pay/passes/reference/v1/eventticketclass
      *
      * @param string $classId The unique identifier for a class
@@ -195,8 +195,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an EventTicket Object
-     *
+    /**
+     * Define an EventTicket Object
      * See https://developers.google.com/pay/passes/reference/v1/eventticketobject
      *
      * @param string $classId The unique identifier for a class
@@ -261,8 +261,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Flight Class
-     *
+    /**
+     * Define an Flight Class
      * See https://developers.google.com/pay/passes/reference/v1/flightclass
      *
      * @param string $classId The unique identifier for a class
@@ -340,8 +340,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Flight Object
-     *
+    /**
+     * Define an Flight Object
      * See https://developers.google.com/pay/passes/reference/v1/flightobject
      *
      * @param string $classId The unique identifier for a class
@@ -385,8 +385,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an GiftCard Class
-     *
+    /**
+     * Define an GiftCard Class
      * See https://developers.google.com/pay/passes/reference/v1/giftcardclass
      *
      * @param string $classId The unique identifier for a class
@@ -447,8 +447,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an GiftCard Object
-     *
+    /**
+     * Define an GiftCard Object
      * See https://developers.google.com/pay/passes/reference/v1/giftcardobject
      *
      * @param string $classId The unique identifier for a class
@@ -501,8 +501,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Loyalty Class
-     *
+    /**
+     * Define an Loyalty Class
      * See https://developers.google.com/pay/passes/reference/v1/loyaltyclass
      *
      * @param string $classId The unique identifier for a class
@@ -578,8 +578,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Loyalty Object
-     *
+    /**
+     * Define an Loyalty Object
      * See https://developers.google.com/pay/passes/reference/v1/loyaltyobject
      *
      * @param string $classId The unique identifier for a class
@@ -671,8 +671,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Transit Class
-     *
+    /**
+     * Define an Transit Class
      * See https://developers.google.com/pay/passes/reference/v1/transitclass
      *
      * @param string $classId The unique identifier for a class
@@ -703,8 +703,8 @@ class ResourceDefinitions
         return $payload;
     }
 
-    /** Define an Transit Object
-     *
+    /**
+     * Define an Transit Object
      * See https://developers.google.com/pay/passes/reference/v1/transitobject
      *
      * @param string $classId The unique identifier for a class

@@ -18,8 +18,8 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  */
 class LoyaltyClassResource extends GoogleResource
 {
-    /** Adds a message to the loyalty class referenced by the given class ID.
-     * (loyaltyclass.addmessage)
+    /**
+     * Adds a message to the loyalty class referenced by the given class ID. (loyaltyclass.addmessage)
      *
      * @param string $resourceId The unique identifier for a class. This ID must be
      * unique across all classes from an issuer. This value should follow the format

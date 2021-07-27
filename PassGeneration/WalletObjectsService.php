@@ -53,8 +53,8 @@ class WalletObjectsService extends Service
     public TransitObjectResource|null $transitObject = null;
     public string $serviceName = 'walletobjects';
 
-    /** Constructs the internal representation of the Walletobjects service.
-     *
+    /**
+     * Constructs the internal representation of the Walletobjects service.
      * @param GoogleClient $client
      */
     public function __construct(GoogleClient $client)
