@@ -2,8 +2,6 @@
 
 namespace PassGeneration;
 
-require '../vendor/autoload.php';
-
 /**
  * TODO:
  *   Document opt_param string classId The ID of -- in header of Resource class
