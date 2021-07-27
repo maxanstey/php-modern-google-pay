@@ -121,64 +121,26 @@ class GooglePassGenerator
     }
 
     /**
-     * Generates a signed "skinny" JWT.
-     * 2 REST calls are made:
-     *   x1 pre-insert one classes
-     *   x1 pre-insert one object which uses previously inserted class
+     * Defined in defineGlobals()
      *
-     * This JWT can be used in JS web button.
-     * This is the shortest type of JWT; recommended for Android intents/redirects.
-     *
-     * See https://developers.google.com/pay/passes/reference/v1/
-     *
-     * @param string $verticalType - define type of pass being generated
-     * @param string $classId - The unique identifier for an class.
-     * @param string $objectId - The unique identifier for an object.
-     * @return string|null $signedJwt - a signed JWT
+     * @return string
      */
-    public function makeSkinnyJwt(
-        string $verticalType,
-        string $classId,
-        string $objectId
-    ): ?string {
-        try {
-            // get class and object definition as well as test if ids exist in backend
-            // make authorized REST call to explicitly insert class and object into Google server.
-            // if this is successful, you can check/update class definitions in Merchant Center GUI:
-            // https://pay.google.com/gp/m/issuer/list
-//            $this->getClassServiceByVerticalType($verticalType)->insert(
-//                $this->createClassByVerticalType($verticalType, $classId)
-//            );
-//
-//            $this->getObjectServiceByVerticalType($verticalType)->insert(
-//                $this->createObjectResourceByVerticalType($verticalType, $classId, $objectId)
-//            );
-
-//            $this->addObjectByVerticalType($verticalType, ['id' => $objectId]);
-            $signedJwt = $this->generateSignedJwt(
-                SERVICE_ACCOUNT_EMAIL_ADDRESS,
-                AUDIENCE,
-                JWT_TYPE,
-                [
-                    'offerClasses' => [
-                        $this->createClassByVerticalType($verticalType, $classId),
-                    ],
-                    'offerObjects' => [
-                        $this->createObjectResourceByVerticalType($verticalType, $classId, $objectId),
-                    ],
-                ],
-                ORIGINS
-            );
-        } catch (Exception $e) {
-            var_dump($e->getMessage());
-        }
-
-        // return "skinny" JWT. Try putting it into save link.
-        // See https://developers.google.com/pay/passes/guides/get-started/implementing-the-api/save-to-google-pay#add-link-to-email
-        return $signedJwt ?? null;
+    public function getAudience(): string
+    {
+        return AUDIENCE;
     }
 
-    private function getClassServiceByVerticalType(
+    /**
+     * Defined in defineGlobals()
+     *
+     * @return string
+     */
+    public function getJwtType(): string
+    {
+        return JWT_TYPE;
+    }
+
+    public function getClassServiceByVerticalType(
         string $verticalType
     ): TransitClassResource|LoyaltyClassResource|EventTicketClassResource|GiftCardClassResource|OfferClassResource|FlightClassResource {
         switch ($verticalType) {
@@ -200,7 +162,7 @@ class GooglePassGenerator
         throw new InvalidArgumentException();
     }
 
-    private function getObjectServiceByVerticalType(
+    public function getObjectServiceByVerticalType(
         string $verticalType
     ): EventTicketObjectResource|OfferObjectResource|LoyaltyObjectResource|FlightObjectResource|TransitObjectResource|GiftCardObjectResource {
         switch ($verticalType) {
@@ -222,7 +184,7 @@ class GooglePassGenerator
         throw new InvalidArgumentException();
     }
 
-    private function createClassByVerticalType(
+    public function createClassByVerticalType(
         string $verticalType,
         string $classId
     ): TransitClass|LoyaltyClass|EventTicketClass|GiftCardClass|OfferClass|FlightClass {
@@ -245,7 +207,7 @@ class GooglePassGenerator
         throw new InvalidArgumentException();
     }
 
-    private function createObjectResourceByVerticalType(
+    public function createObjectResourceByVerticalType(
         string $verticalType,
         string $classId,
         string $objectId
@@ -269,21 +231,7 @@ class GooglePassGenerator
         throw new InvalidArgumentException();
     }
 
-    private function addObjectByVerticalType(
-        string $verticalType,
-        array $payload
-    ): void {
-        $key = JwtKey::byVerticalType($verticalType);
-
-        if (isset($this->payload[$key]) === true) {
-            // TODO:
-            throw new Exception();
-        }
-
-        $this->payload[$key][] = $payload;
-    }
-
-    private function defineGlobals(
+    public function defineGlobals(
         string $serviceAccountEmailAddress,
         string $serviceAccountJson,
         string $applicationName,

@@ -1,3 +1,4 @@
+
 # php-modern-google-pay
 
 A modern, PSR-compliant, refactor of the Google Pay for Passes PHP library.
@@ -118,28 +119,51 @@ Run the following PHP to generate a JWT:
 
     $json = file_get_contents('YOUR-SERVICE-ACCOUNT-CREDENTIALS.json');
 
-    $isserId = 3388000000000000000; // YOUR ISSUER ID
+    $issuerId = 3388000000000000000; // YOUR ISSUER ID
+
+    $serviceAccountEmailAddress = 'YOUR-EMAIL@YOUR-PROJECT.iam.gserviceaccount.com';
+    $applicationName = 'YOUR APPLICATION NAME';
+    $origins = [
+        'http://localhost:3000',
+    ];
 
     $generator = new \PassGeneration\GooglePassGenerator(
-      'YOUR-EMAIL@YOUR-PROJECT.iam.gserviceaccount.com',
+      $serviceAccountEmailAddress,
       $json,
-      'YOUR APPLICATION NAME',
+      $applicationName,
       $issuerId,
-      [
-          'http://localhost:3000',
-      ]
+      $origins
     );
 
     $randomClassIdString = md5(uniqid('', true)); // Not cryptographically secure, just an example
-    $classId = sprintf("%s.%s", $isserId, $randomClassIdString);
+    $classId = sprintf("%s.%s", $issuerId, $randomClassIdString);
 
     $randomObjectIdString = md5(uniqid('', true)); // Not cryptographically secure, just an example
-    $objectId = sprintf("%s.%s", $isserId, $randomObjectIdString);
+    $objectId = sprintf("%s.%s", $issuerId, $randomObjectIdString);
 
-    $jwt = $generator->makeJwt(
-     \PassGeneration\VerticalTypes\Enums\VerticalType::OFFER,
-      $classId,
-      $objectId
+    $verticalType = VerticalType::OFFER;
+
+    /** @var OfferClass $offerClass */
+    $offerClass = $generator->createClassByVerticalType($verticalType, $classId);
+    // e.g. $offerClass->setTitle('My title');
+
+    /** @var OfferObject $offerObject */
+    $offerObject = $generator->createObjectResourceByVerticalType($verticalType, $classId, $objectId);
+    // e.g. $offerObject->setHasUsers(false);
+
+    $jwt = $generator->generateSignedJwt(
+        $serviceAccountEmailAddress,
+        $generator->getAudience(),
+        $generator->getJwtType(),
+        [
+            JwtKey::OFFER_CLASS => [
+                $offerClass,
+            ],
+            JwtKey::OFFER_OBJECT => [
+                $offerObject,
+            ],
+        ],
+        $origins
     );
 
     die(var_dump($jwt));

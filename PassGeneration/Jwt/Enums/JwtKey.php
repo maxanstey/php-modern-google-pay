@@ -2,32 +2,22 @@
 
 namespace PassGeneration\Jwt\Enums;
 
-use PassGeneration\VerticalTypes\Enums\VerticalType;
 use PassGeneration\Enums\Enum;
-use InvalidArgumentException;
-use ReflectionClass;
 
 class JwtKey extends Enum
 {
-    public const OFFER = 'offerObjects';
-    public const EVENT_TICKET = 'offerObjects';
-    public const FLIGHT = 'offerObjects';
-    public const BOARDING_PASS = 'offerObjects';
-    public const GIFT_CARD = 'offerObjects';
-    public const LOYALTY = 'offerObjects';
-    public const TRANSIT = 'offerObjects';
-
-    public static function byVerticalType(int $verticalType)
-    {
-        $reflector = new ReflectionClass(VerticalType::class);
-
-        foreach ($reflector->getConstants() as $key => $value) {
-            if ($verticalType === $value) {
-                return self::all()[$key];
-            }
-        }
-
-        // TODO:
-        throw new InvalidArgumentException();
-    }
+    public const EVENT_TICKET_CLASS = 'eventTicketClasses';
+    public const EVENT_TICKET_OBJECT = 'eventTicketObjects';
+    public const FLIGHT_CLASS = 'flightClasses';
+    public const FLIGHT_OBJECT = 'flightObjects';
+    public const BOARDING_PASS_CLASS = 'flightClasses';
+    public const BOARDING_PASS_OBJECT = 'flightObjects';
+    public const GIFT_CARD_CLASS = 'giftCardClasses';
+    public const GIFT_CARD_OBJECT = 'offerObjgiftCardObjectsects';
+    public const LOYALTY_CLASS = 'loyaltyClasses';
+    public const LOYALTY_OBJECT = 'loyaltyObjects';
+    public const OFFER_CLASS = 'offerClasses';
+    public const OFFER_OBJECT = 'offerObjects';
+    public const TRANSIT_CLASS = 'transitClasses';
+    public const TRANSIT_OBJECT = 'transitObjects';
 }
