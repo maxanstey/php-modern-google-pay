@@ -150,27 +150,27 @@ This will return a JWT such as the below:
 
 Copy this JWT and use it to generate some HTML as below*
 
-	<html>
-		<head>
-			<script src="https://apis.google.com/js/platform.js" async defer></script>
-		</head>
-		<body>
-			<div id="google_wallet_button"></div>
+    <html>
+        <head>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+        </head>
+        <body>
+            <div id="google_wallet_button"></div>
 
-			<script>
-			  window.onload = () => {
-					gapi.savetoandroidpay.render(
-						'google_wallet_button',
-						{
-							jwt: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJvYmZ1c2NhdGVkIiwiYXVk...',
-							onsuccess: 'successHandler',
-							onfailure: 'failureHandler',
-						}
-					)
-			  }
-			</script>
-		</body>
-	</html>
+            <script>
+              window.onload = () => {
+                    gapi.savetoandroidpay.render(
+                        'google_wallet_button',
+                        {
+                            jwt: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJvYmZ1c2NhdGVkIiwiYXVk...',
+                            onsuccess: 'successHandler',
+                            onfailure: 'failureHandler',
+                        }
+                    )
+              }
+            </script>
+        </body>
+    </html>
 
 *Personally I would make an API request from your site to your API responsible for generating the JWT and obtain it that way, but I am using a copy-paste in this guide for simplicity.
 
