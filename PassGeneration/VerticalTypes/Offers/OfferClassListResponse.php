@@ -12,11 +12,11 @@ class OfferClassListResponse extends GoogleCollection
      */
     protected $collection_key = 'resources';
     /**
-     * @var GooglePagination|null
+     * @var array|GooglePagination|null
      */
-    public GooglePagination|null $pagination = null;
+    public array|GooglePagination|null $pagination = null;
     /**
-     * @var OfferClass[]|null|null
+     * @var OfferClass[]|null
      */
     public array|null $resources = null;
 

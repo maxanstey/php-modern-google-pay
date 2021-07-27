@@ -2,6 +2,7 @@
 
 namespace PassGeneration;
 
+use PassGeneration\Enums\ResourceMethod;
 use PassGeneration\VerticalTypes\Events\EventTicketClassResource;
 use PassGeneration\VerticalTypes\Events\EventTicketObjectResource;
 use PassGeneration\VerticalTypes\Flights\FlightClassResource;
@@ -70,72 +71,9 @@ class WalletObjectsService extends Service
             $this,
             $this->serviceName,
             'eventticketclass',
-            array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/eventTicketClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
-            )
+            [
+                'methods' => ResourceMethod::EVENT_TICKET_CLASS_RESOURCE_METHODS,
+            ]
         );
 
         $this->eventTicketObject = new EventTicketObjectResource(
@@ -143,80 +81,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'eventticketobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'modifylinkedofferobjects' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject/{resourceId}/modifyLinkedOfferObjects',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/eventTicketObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::EVENT_TICKET_OBJECT_RESOURCE_METHODS
             )
         );
 
@@ -225,70 +90,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'flightclass',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/flightClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/flightClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/flightClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/flightClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/flightClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/flightClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::FLIGHT_CLASS_RESOURCE_METHODS
             )
         );
 
@@ -297,70 +99,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'flightobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/flightObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/flightObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/flightObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/flightObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/flightObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/flightObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::FLIGHT_OBJECT_RESOURCE_METHODS
             )
         );
 
@@ -369,70 +108,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'giftcardclass',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/giftCardClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/giftCardClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/giftCardClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/giftCardClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/giftCardClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/giftCardClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::GIFT_CARD_CLASS_RESOURCE_METHODS
             )
         );
 
@@ -441,70 +117,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'giftcardobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/giftCardObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/giftCardObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/giftCardObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/giftCardObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/giftCardObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/giftCardObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::GIFT_CARD_OBJECT_RESOURCE_METHODS
             )
         );
 
@@ -513,47 +126,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'issuer',
             array(
-                'methods' => array(
-                    'get' => array(
-                        'path' => 'walletobjects/v1/issuer/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/issuer',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/issuer',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/issuer/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/issuer/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::ISSUER_RESOURCE_METHODS
             )
         );
 
@@ -562,13 +135,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'jwt',
             array(
-                'methods' => array(
-                    'insert' => array(
-                        'path' => 'walletobjects/v1/jwt',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),
-                )
+                'methods' => ResourceMethod::JWT_RESOURCE_METHODS
             )
         );
 
@@ -577,70 +144,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'loyaltyclass',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/loyaltyClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::LOYALTY_CLASS_RESOURCE_METHODS
             )
         );
 
@@ -649,80 +153,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'loyaltyobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'modifylinkedofferobjects' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject/{resourceId}/modifyLinkedOfferObjects',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/loyaltyObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::LOYALTY_OBJECT_RESOURCE_METHODS
             )
         );
 
@@ -731,70 +162,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'offerclass',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/offerClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/offerClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/offerClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/offerClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/offerClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/offerClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::OFFER_CLASS_RESOURCE_METHODS
             )
         );
 
@@ -803,70 +171,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'offerobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/offerObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/offerObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/offerObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/offerObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/offerObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/offerObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::OFFER_OBJECT_RESOURCE_METHODS
             )
         );
 
@@ -875,29 +180,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'permissions',
             array(
-                'methods' => array(
-                    'get' => array(
-                        'path' => 'walletobjects/v1/permissions/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/permissions/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::PERMISSIONS_RESOURCE_METHODS
             )
         );
 
@@ -906,13 +189,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'smarttap',
             array(
-                'methods' => array(
-                    'insert' => array(
-                        'path' => 'walletobjects/v1/smartTap',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),
-                )
+                'methods' => ResourceMethod::SMART_TAP_RESOURCE_METHODS
             )
         );
 
@@ -921,70 +198,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'transitclass',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/transitClass/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/transitClass/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/transitClass',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/transitClass',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'issuerId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/transitClass/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/transitClass/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::TRANSIT_CLASS_RESOURCE_METHODS
             )
         );
 
@@ -993,70 +207,7 @@ class WalletObjectsService extends Service
             $this->serviceName,
             'transitobject',
             array(
-                'methods' => array(
-                    'addmessage' => array(
-                        'path' => 'walletobjects/v1/transitObject/{resourceId}/addMessage',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'get' => array(
-                        'path' => 'walletobjects/v1/transitObject/{resourceId}',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'insert' => array(
-                        'path' => 'walletobjects/v1/transitObject',
-                        'httpMethod' => 'POST',
-                        'parameters' => array(),
-                    ),'list' => array(
-                        'path' => 'walletobjects/v1/transitObject',
-                        'httpMethod' => 'GET',
-                        'parameters' => array(
-                            'classId' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'token' => array(
-                                'location' => 'query',
-                                'type' => 'string',
-                            ),
-                            'maxResults' => array(
-                                'location' => 'query',
-                                'type' => 'integer',
-                            ),
-                        ),
-                    ),'patch' => array(
-                        'path' => 'walletobjects/v1/transitObject/{resourceId}',
-                        'httpMethod' => 'PATCH',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),'update' => array(
-                        'path' => 'walletobjects/v1/transitObject/{resourceId}',
-                        'httpMethod' => 'PUT',
-                        'parameters' => array(
-                            'resourceId' => array(
-                                'location' => 'path',
-                                'type' => 'string',
-                                'required' => true,
-                            ),
-                        ),
-                    ),
-                )
+                'methods' => ResourceMethod::TRANSIT_OBJECT_RESOURCE_METHODS
             )
         );
     }

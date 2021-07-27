@@ -7,6 +7,8 @@ namespace PassGeneration;
  *   Document opt_param string classId The ID of -- in header of Resource class
  */
 
+use Google\Service\Resource as GoogleResource;
+use GuzzleHttp\Psr7\Request;
 use PassGeneration\Jwt\Enums\JwtKey;
 use PassGeneration\VerticalTypes\Enums\VerticalType;
 use PassGeneration\VerticalTypes\Events\EventTicketClassResource;
@@ -16,7 +18,8 @@ use PassGeneration\VerticalTypes\Flights\FlightClassResource;
 use PassGeneration\VerticalTypes\Flights\FlightObject;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardClassResource;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardObject;
-use PassGeneration\WalletObjectsService as WalletObjectsService;
+use PassGeneration\VerticalTypes\Offers\OfferClassListResponse;
+use PassGeneration\WalletObjectsService;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyClassResource;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyObject;
 use PassGeneration\VerticalTypes\Offers\OfferClassResource;
@@ -60,6 +63,10 @@ class GooglePassGenerator
      * @var string
      */
     public string $tokenPath = __DIR__ . '/token.json';
+    /**
+     * @var string
+     */
+    public const ROOT_URL = 'https://walletobjects.googleapis.com/';
     /**
      * @var string
      */
@@ -231,7 +238,38 @@ class GooglePassGenerator
         throw new InvalidArgumentException();
     }
 
-    public function defineGlobals(
+    /**
+     * \Google\Service\Resource doesn't appear to support GET requests
+     * with query params, so this reimplements it for list requests
+     *
+     * @param string $verticalType
+     * @param int $issuerId
+     * @param string $classId
+     * @param string $expectedClass
+     * @param GoogleResource $resource
+     * @return object
+     * @throws \Google\Exception
+     */
+    public function makeListRequest(
+        string $verticalType,
+        int $issuerId,
+        string $classId,
+        string $expectedClass,
+        GoogleResource $resource
+    ): object {
+        $method = $resource->getMethods()['list'];
+
+        $request = new Request(
+            'GET',
+            self::ROOT_URL . $method['path'] . "?issuerId=$issuerId&classId=$classId",
+            ['content-type' => 'application/json'],
+            ''
+        );
+
+        return $this->service->getClient()->execute($request, OfferClassListResponse::class);
+    }
+
+    private function defineGlobals(
         string $serviceAccountEmailAddress,
         string $serviceAccountJson,
         string $applicationName,

@@ -6,6 +6,7 @@ use PassGeneration\AddMessageRequest as AddMessageRequest;
 use Google\Service\Resource as GoogleResource;
 use Google\Exception as GoogleException;
 use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
+use PassGeneration\Enums\ResourceMethod;
 
 /**
  * Class OfferObjectResource
@@ -18,7 +19,11 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  */
 class OfferObjectResource extends GoogleResource
 {
-
+    public function getMethods(): array
+    {
+        return ResourceMethod::OFFER_OBJECT_RESOURCE_METHODS;
+    }
+    
     /**
      * Adds a message to the offer object referenced by the given object ID.
      * (offerobject.addmessage)
