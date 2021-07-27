@@ -13,7 +13,7 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  * The "loyaltyclass" collection of methods.
  * Typical usage is:
  *
- *  $walletobjectsService = new Google_Service_Walletobjects(...);
+ *  $walletobjectsService = new WalletObjectsService(...);
  *  $loyaltyClass = $walletobjectsService->loyaltyClass;
  */
 class LoyaltyClassResource extends GoogleResource

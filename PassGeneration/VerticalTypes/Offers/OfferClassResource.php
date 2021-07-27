@@ -13,7 +13,7 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  * The "offerclass" collection of methods.
  * Typical usage is:
  *
- *  $walletobjectsService = new Google_Service_Walletobjects(...);
+ *  $walletobjectsService = new WalletObjectsService(...);
  *  $offerClass = $walletobjectsService->offerClass;
  */
 class OfferClassResource extends GoogleResource

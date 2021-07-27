@@ -12,7 +12,7 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  * The "jwt" collection of methods.
  * Typical usage is:
  *
- *   $walletObjectsService = new Google_Service_Walletobjects(...);
+ *   $walletObjectsService = new WalletObjectsService(...);
  *   $jwt = $walletObjectsService->jwt;
  */
 class JwtResource extends GoogleResource

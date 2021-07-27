@@ -22,7 +22,7 @@ use Google\Service;
 use Google\Client as GoogleClient;
 
 /**
- * class Google_Service_Walletobjects
+ * class WalletObjectsService
  *
  * Service definition for Walletobjects (v1).
  *
@@ -33,7 +33,7 @@ use Google\Client as GoogleClient;
  *
  * @author Google, Inc.
  */
-class Google_Service_Walletobjects extends Service
+class WalletObjectsService extends Service
 {
     public EventTicketClassResource|null $eventTicketClass = null;
     public EventTicketObjectResource|null $eventTicketObject = null;

@@ -16,7 +16,7 @@ use PassGeneration\VerticalTypes\Flights\FlightClassResource;
 use PassGeneration\VerticalTypes\Flights\FlightObject;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardClassResource;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardObject;
-use PassGeneration\Google_Service_Walletobjects as WalletObjectsService;
+use PassGeneration\WalletObjectsService as WalletObjectsService;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyClassResource;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyObject;
 use PassGeneration\VerticalTypes\Offers\OfferClassResource;

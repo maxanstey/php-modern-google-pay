@@ -12,7 +12,7 @@ use GuzzleHttp\Psr7\Request as GuzzleHttpRequest;
  * The "permissions" collection of methods.
  * Typical usage is:
  *
- *   $walletObjectsService = new Google_Service_Walletobjects(...);
+ *   $walletObjectsService = new WalletObjectsService(...);
  *   $permissions = $walletObjectsService->permissions;
  */
 class PermissionsResource extends GoogleResource
