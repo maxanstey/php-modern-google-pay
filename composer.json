@@ -1,5 +1,8 @@
 {
+    "name": "maxanstey/php-modern-google-pay",
+    "description": "A modern, PSR-compliant, refactor of the Google Pay for Passes PHP library.",
     "require": {
+        "php": "^8.0",
         "google/apiclient": "^2.10"
     },
     "autoload": {
