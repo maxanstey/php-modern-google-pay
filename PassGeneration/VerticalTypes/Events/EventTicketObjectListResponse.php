@@ -16,7 +16,7 @@ class EventTicketObjectListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var EventTicketObject|null[]
+     * @var EventTicketObject[]|null
      */
     public array|null $resources = null;
 

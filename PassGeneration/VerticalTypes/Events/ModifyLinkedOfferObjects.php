@@ -11,11 +11,11 @@ class ModifyLinkedOfferObjects extends GoogleCollection
      */
     protected $collection_key = 'removeLinkedOfferObjectIds';
     /**
-     * @var string|null[]
+     * @var string[]|null
      */
     public array|null $addLinkedOfferObjectIds = null;
     /**
-     * @var string|null[]
+     * @var string[]|null
      */
     public array|null $removeLinkedOfferObjectIds = null;
 

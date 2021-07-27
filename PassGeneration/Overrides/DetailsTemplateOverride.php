@@ -12,7 +12,7 @@ class DetailsTemplateOverride extends GoogleCollection
      */
     protected $collection_key = 'detailsItemInfos';
     /**
-     * @var DetailsItemInfo|null[]
+     * @var DetailsItemInfo[]|null
      */
     public array|null $detailsItemInfos = null;
 

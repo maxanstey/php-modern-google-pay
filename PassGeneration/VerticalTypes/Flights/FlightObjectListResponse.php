@@ -16,7 +16,7 @@ class FlightObjectListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var FlightObject|null[]
+     * @var FlightObject[]|null
      */
     public array|null $resources = null;
 

@@ -11,7 +11,7 @@ class LabelValueRow extends GoogleCollection
      */
     protected $collection_key = 'columns';
     /**
-     * @var LabelValue|null[]
+     * @var LabelValue[]|null
      */
     public array|null $columns = null;
 

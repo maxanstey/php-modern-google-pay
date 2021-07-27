@@ -71,7 +71,7 @@ class OfferClass extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]|null
+     * @var ImageModuleData[]|null|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -115,11 +115,11 @@ class OfferClass extends GoogleCollection
      */
     public LocalizedString|null $localizedTitle = null;
     /**
-     * @var LatLongPoint|null[]|null
+     * @var LatLongPoint[]|null|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage|null[]|null
+     * @var GoogleMessage[]|null|null
      */
     public array|null $messages = null;
     /**
@@ -151,7 +151,7 @@ class OfferClass extends GoogleCollection
      */
     public string|null $shortTitle = null;
     /**
-     * @var TextModuleData|null[]|null
+     * @var TextModuleData[]|null|null
      */
     public array|null $textModulesData = null;
     /**

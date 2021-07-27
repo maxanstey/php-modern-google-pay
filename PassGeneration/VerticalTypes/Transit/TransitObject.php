@@ -72,7 +72,7 @@ class TransitObject extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -84,11 +84,11 @@ class TransitObject extends GoogleCollection
      */
     public LinksModuleData|null $linksModuleData = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -112,7 +112,7 @@ class TransitObject extends GoogleCollection
      */
     public string|null $state = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**
@@ -120,7 +120,7 @@ class TransitObject extends GoogleCollection
      */
     public TicketLeg|null $ticketLeg = null;
     /**
-     * @var TicketLeg|null[] $ticketLegs
+     * @var TicketLeg[]|null $ticketLegs
      */
     public array|null $ticketLegs = null;
     /**

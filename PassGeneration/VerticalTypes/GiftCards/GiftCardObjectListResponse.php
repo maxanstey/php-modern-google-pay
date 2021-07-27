@@ -16,7 +16,7 @@ class GiftCardObjectListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var GiftCardObject|null[]
+     * @var GiftCardObject[]|null
      */
     public array|null $resources = null;
 

@@ -12,7 +12,7 @@ class LinksModuleData extends GoogleCollection
      */
     protected $collection_key = 'uris';
     /**
-     * @var Uri|null[]
+     * @var Uri[]|null
      */
     public array|null $uris = null;
 

@@ -12,7 +12,7 @@ class CardTemplateOverride extends GoogleCollection
      */
     protected $collection_key = 'cardRowTemplateInfos';
     /**
-     * @var CardRowTemplateInfo|null[]
+     * @var CardRowTemplateInfo[]|null
      */
     public array|null $cardRowTemplateInfos = null;
 

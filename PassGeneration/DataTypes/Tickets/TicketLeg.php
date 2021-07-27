@@ -52,7 +52,7 @@ class TicketLeg extends GoogleCollection
      */
     public TicketSeat|null $ticketSeat = null;
     /**
-     * @var TicketSeat|null[]
+     * @var TicketSeat[]|null
      */
     public array|null $ticketSeats = null;
     /**

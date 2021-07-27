@@ -61,7 +61,7 @@ class FlightObject extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -77,11 +77,11 @@ class FlightObject extends GoogleCollection
      */
     public LinksModuleData|null $linksModuleData = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -105,7 +105,7 @@ class FlightObject extends GoogleCollection
      */
     public string|null $state = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**

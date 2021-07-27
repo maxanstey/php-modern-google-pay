@@ -11,7 +11,7 @@ class IssuerListResponse extends GoogleCollection
      */
     protected $collection_key = 'resources';
     /**
-     * @var Issuer|null[]
+     * @var Issuer[]|null
      */
     public array|null $resources = null;
 

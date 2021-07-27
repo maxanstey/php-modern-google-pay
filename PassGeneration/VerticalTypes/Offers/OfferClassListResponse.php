@@ -16,7 +16,7 @@ class OfferClassListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var OfferClass|null[]|null
+     * @var OfferClass[]|null|null
      */
     public array|null $resources = null;
 

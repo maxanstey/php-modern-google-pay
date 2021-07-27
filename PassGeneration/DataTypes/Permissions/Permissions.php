@@ -16,7 +16,7 @@ class Permissions extends GoogleCollection
      */
     public string|null $issuerId = null;
     /**
-     * @var GooglePermission|null[]
+     * @var GooglePermission[]|null
      */
     public array|null $permissions = null;
 

@@ -23,51 +23,51 @@ class Resources extends GoogleCollection
      */
     protected $collection_key = 'transitObjects';
     /**
-     * @var EventTicketClass|null[]
+     * @var EventTicketClass[]|null
      */
     public array|null $eventTicketClasses = null;
     /**
-     * @var EventTicketObject|null[]
+     * @var EventTicketObject[]|null
      */
     public array|null $eventTicketObjects = null;
     /**
-     * @var FlightClass|null[]
+     * @var FlightClass[]|null
      */
     public array|null $flightClasses = null;
     /**
-     * @var FlightObject|null[]
+     * @var FlightObject[]|null
      */
     public array|null $flightObjects = null;
     /**
-     * @var GiftCardClass|null[]
+     * @var GiftCardClass[]|null
      */
     public array|null $giftCardClasses = null;
     /**
-     * @var GiftCardObject|null[]
+     * @var GiftCardObject[]|null
      */
     public array|null $giftCardObjects = null;
     /**
-     * @var LoyaltyClass|null[]
+     * @var LoyaltyClass[]|null
      */
     public array|null $loyaltyClasses = null;
     /**
-     * @var LoyaltyObject|null[]
+     * @var LoyaltyObject[]|null
      */
     public array|null $loyaltyObjects = null;
     /**
-     * @var OfferClass|null[]
+     * @var OfferClass[]|null
      */
     public array|null $offerClasses = null;
     /**
-     * @var OfferObject|null[]
+     * @var OfferObject[]|null
      */
     public array|null $offerObjects = null;
     /**
-     * @var TransitClass|null[]
+     * @var TransitClass[]|null
      */
     public array|null $transitClasses = null;
     /**
-     * @var TransitObject|null[]
+     * @var TransitObject[]|null
      */
     public array|null $transitObjects = null;
 

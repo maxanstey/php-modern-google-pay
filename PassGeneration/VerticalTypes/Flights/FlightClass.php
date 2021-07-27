@@ -76,7 +76,7 @@ class FlightClass extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -124,11 +124,11 @@ class FlightClass extends GoogleCollection
      */
     public LocalizedString|null $localizedIssuerName = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -152,7 +152,7 @@ class FlightClass extends GoogleCollection
      */
     public string|null $reviewStatus = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**

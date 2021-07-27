@@ -16,7 +16,7 @@ class LoyaltyClassListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var LoyaltyClass|null[]
+     * @var LoyaltyClass[]|null
      */
     public array|null $resources = null;
 

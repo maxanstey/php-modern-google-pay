@@ -16,7 +16,7 @@ class TransitClassListResponse extends GoogleCollection
      */
     public GooglePagination|null $pagination = null;
     /**
-     * @var TransitClass|null[]
+     * @var TransitClass[]|null
      */
     public array|null $resources = null;
 

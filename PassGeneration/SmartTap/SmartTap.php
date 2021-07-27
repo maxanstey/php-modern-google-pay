@@ -24,7 +24,7 @@ class SmartTap extends GoogleCollection
      */
     public string|null $merchantId = null;
     /**
-     * @var IssuerToUserInfo|null[]
+     * @var IssuerToUserInfo[]|null
      */
     public array|null $infos = null;
 

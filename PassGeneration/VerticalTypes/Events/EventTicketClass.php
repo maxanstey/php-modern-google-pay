@@ -155,15 +155,15 @@ class EventTicketClass extends GoogleCollection
      */
     public LocalizedString|null $localizedIssuerName = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
-    public mixed|null $locations = null;
+    public mixed $locations = null;
     /**
      * @var GoogleImage|null
      */
     public GoogleImage|null $logo = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**

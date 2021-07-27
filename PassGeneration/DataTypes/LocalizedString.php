@@ -20,7 +20,7 @@ class LocalizedString extends GoogleCollection
      */
     public TranslatedString|null $defaultValue = null;
     /**
-     * @var TranslatedString|null[]
+     * @var TranslatedString[]|null
      */
     public array|null $translatedValues = null;
 

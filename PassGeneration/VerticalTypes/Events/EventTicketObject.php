@@ -62,11 +62,11 @@ class EventTicketObject extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var InfoModuleData|null[]
+     * @var InfoModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
-     * @var InfoModuleData|null[]
+     * @var InfoModuleData[]|null
      */
     public array|null $infoModuleData = null;
     /**
@@ -82,11 +82,11 @@ class EventTicketObject extends GoogleCollection
      */
     public LinksModuleData|null $linksModuleData = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -106,7 +106,7 @@ class EventTicketObject extends GoogleCollection
      */
     public string|null $state = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**

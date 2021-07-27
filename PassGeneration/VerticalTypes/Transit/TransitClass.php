@@ -139,7 +139,7 @@ class TransitClass extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -163,7 +163,7 @@ class TransitClass extends GoogleCollection
      */
     public LocalizedString|null $localizedIssuerName = null;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
@@ -171,7 +171,7 @@ class TransitClass extends GoogleCollection
      */
     public GoogleImage|null $logo = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -191,7 +191,7 @@ class TransitClass extends GoogleCollection
      */
     public string|null $reviewStatus = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**

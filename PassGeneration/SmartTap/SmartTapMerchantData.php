@@ -16,7 +16,7 @@ class SmartTapMerchantData extends GoogleCollection
      */
     public string|null $smartTapMerchantId = null;
     /**
-     * @var AuthenticationKey|null[]
+     * @var AuthenticationKey[]|null
      */
     public array|null $authenticationKeys = null;
 

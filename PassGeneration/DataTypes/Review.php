@@ -6,7 +6,7 @@ use Google\Model as GoogleModel;
 
 class Review extends GoogleModel
 {
-    public mixed|null $comments = null;
+    public mixed $comments = null;
 
     public function setComments($comments): static
     {

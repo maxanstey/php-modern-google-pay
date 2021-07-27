@@ -71,7 +71,7 @@ class GiftCardClass extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData|null[]
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -111,7 +111,7 @@ class GiftCardClass extends GoogleCollection
      */
     public LocalizedString$localizedPinLabel;
     /**
-     * @var LatLongPoint|null[]
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
@@ -119,7 +119,7 @@ class GiftCardClass extends GoogleCollection
      */
     public string|null $merchantName = null;
     /**
-     * @var GoogleMessage|null[]
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -135,9 +135,9 @@ class GiftCardClass extends GoogleCollection
      */
     public GoogleImage|null $programLogo = null;
     /**
-     * @var mixed|null
+     * @var mixed
      */
-    public mixed|null $redemptionIssuers = null;
+    public mixed $redemptionIssuers = null;
     /**
      * @var GoogleReview|null
      */
@@ -147,7 +147,7 @@ class GiftCardClass extends GoogleCollection
      */
     public string|null $reviewStatus = null;
     /**
-     * @var TextModuleData|null[]
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**

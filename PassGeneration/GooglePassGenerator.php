@@ -148,20 +148,27 @@ class GooglePassGenerator
             // make authorized REST call to explicitly insert class and object into Google server.
             // if this is successful, you can check/update class definitions in Merchant Center GUI:
             // https://pay.google.com/gp/m/issuer/list
-            $this->getClassServiceByVerticalType($verticalType)->insert(
-                $this->createClassByVerticalType($verticalType, $classId)
-            );
+//            $this->getClassServiceByVerticalType($verticalType)->insert(
+//                $this->createClassByVerticalType($verticalType, $classId)
+//            );
+//
+//            $this->getObjectServiceByVerticalType($verticalType)->insert(
+//                $this->createObjectResourceByVerticalType($verticalType, $classId, $objectId)
+//            );
 
-            $this->getObjectServiceByVerticalType($verticalType)->insert(
-                $this->createObjectResourceByVerticalType($verticalType, $classId, $objectId)
-            );
-
-            $this->addObjectByVerticalType($verticalType, ['id' => $objectId]);
+//            $this->addObjectByVerticalType($verticalType, ['id' => $objectId]);
             $signedJwt = $this->generateSignedJwt(
                 SERVICE_ACCOUNT_EMAIL_ADDRESS,
                 AUDIENCE,
                 JWT_TYPE,
-                ['id' => $objectId],
+                [
+                    'offerClasses' => [
+                        $this->createClassByVerticalType($verticalType, $classId),
+                    ],
+                    'offerObjects' => [
+                        $this->createObjectResourceByVerticalType($verticalType, $classId, $objectId),
+                    ],
+                ],
                 ORIGINS
             );
         } catch (Exception $e) {
