@@ -52,7 +52,7 @@ class OfferObject extends GoogleCollection
      */
     public string|null $id = null;
     /**
-     * @var ImageModuleData[]|null|null
+     * @var ImageModuleData[]|null
      */
     public array|null $imageModulesData = null;
     /**
@@ -68,11 +68,11 @@ class OfferObject extends GoogleCollection
      */
     public LinksModuleData|null $linksModuleData = null;
     /**
-     * @var LatLongPoint[]|null|null
+     * @var LatLongPoint[]|null
      */
     public array|null $locations = null;
     /**
-     * @var GoogleMessage[]|null|null
+     * @var GoogleMessage[]|null
      */
     public array|null $messages = null;
     /**
@@ -84,13 +84,13 @@ class OfferObject extends GoogleCollection
      */
     public string|null $state = null;
     /**
-     * @var TextModuleData[]|null|null
+     * @var TextModuleData[]|null
      */
     public array|null $textModulesData = null;
     /**
-     * @var TimeInterval|null
+     * @var array|TimeInterval|null
      */
-    public TimeInterval|null $validTimeInterval = null;
+    public array|TimeInterval|null $validTimeInterval = null;
     /**
      * @var string|null
      */

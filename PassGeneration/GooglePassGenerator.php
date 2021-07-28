@@ -9,7 +9,6 @@ namespace PassGeneration;
 
 use Google\Service\Resource as GoogleResource;
 use GuzzleHttp\Psr7\Request;
-use PassGeneration\Jwt\Enums\JwtKey;
 use PassGeneration\VerticalTypes\Enums\VerticalType;
 use PassGeneration\VerticalTypes\Events\EventTicketClassResource;
 use PassGeneration\VerticalTypes\Events\EventTicketObject;
@@ -18,8 +17,6 @@ use PassGeneration\VerticalTypes\Flights\FlightClassResource;
 use PassGeneration\VerticalTypes\Flights\FlightObject;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardClassResource;
 use PassGeneration\VerticalTypes\GiftCards\GiftCardObject;
-use PassGeneration\VerticalTypes\Offers\OfferClassListResponse;
-use PassGeneration\WalletObjectsService;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyClassResource;
 use PassGeneration\VerticalTypes\Loyalty\LoyaltyObject;
 use PassGeneration\VerticalTypes\Offers\OfferClassResource;
@@ -242,7 +239,6 @@ class GooglePassGenerator
      * \Google\Service\Resource doesn't appear to support GET requests
      * with query params, so this reimplements it for list requests
      *
-     * @param string $verticalType
      * @param int $issuerId
      * @param string $classId
      * @param string $expectedClass
@@ -251,7 +247,6 @@ class GooglePassGenerator
      * @throws \Google\Exception
      */
     public function makeListRequest(
-        string $verticalType,
         int $issuerId,
         string $classId,
         string $expectedClass,
@@ -266,7 +261,7 @@ class GooglePassGenerator
             ''
         );
 
-        return $this->service->getClient()->execute($request, OfferClassListResponse::class);
+        return $this->service->getClient()->execute($request, $expectedClass);
     }
 
     private function defineGlobals(
@@ -278,7 +273,7 @@ class GooglePassGenerator
     ): void {
         define('SERVICE_ACCOUNT_EMAIL_ADDRESS', $serviceAccountEmailAddress);
 
-        define('SERVICE_ACCOUNT_FILE', __DIR__ . '/service-account-file.json');
+        define('SERVICE_ACCOUNT_FILE', sys_get_temp_dir() . '/service-account-file.json');
         file_put_contents(SERVICE_ACCOUNT_FILE, $serviceAccountJson);
 
         // Used by the Google Pay API for Passes Client library

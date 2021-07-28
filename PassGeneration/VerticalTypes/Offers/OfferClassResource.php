@@ -23,7 +23,7 @@ class OfferClassResource extends GoogleResource
     {
         return ResourceMethod::OFFER_CLASS_RESOURCE_METHODS;
     }
-    
+
     /**
      * Adds a message to the offer class referenced by the given class ID.
      * (offerclass.addmessage)
@@ -169,23 +169,23 @@ class OfferClassResource extends GoogleResource
      * characters, '.', '_', or '-'.
      * @param OfferClass $postBody
      * @param array $optionalParameters
-     * @return GuzzleHttpRequest
+     * @return GuzzleHttpRequest|OfferClass
      * @throws GoogleException
      */
     public function update(
         string $resourceId,
         OfferClass $postBody,
         array $optionalParameters = []
-    ): GuzzleHttpRequest {
+    ): GuzzleHttpRequest|OfferClass {
         return $this->call(
             'update',
-            array_values(array_merge(
+            [array_merge(
                 [
                     'resourceId' => $resourceId,
                     'postBody' => $postBody,
                 ],
                 $optionalParameters
-            )),
+            )],
             OfferClass::class
         );
     }
