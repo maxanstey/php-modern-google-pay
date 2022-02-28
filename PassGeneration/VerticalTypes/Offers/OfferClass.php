@@ -243,7 +243,7 @@ class OfferClass extends GoogleCollection
         return $this->enableSmartTap;
     }
 
-    public function setFinePrint(string $finePrint): static
+    public function setFinePrint(string|null $finePrint): static
     {
         $this->finePrint = $finePrint;
 
